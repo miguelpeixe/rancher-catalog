@@ -1,0 +1,49 @@
+.catalog:
+  name: "WordPress"
+  version: "v0.0.1"
+  description: "Blog tool, publishing platform and CMS"
+  uuid: WordPress-0
+  minimum_rancher_version: v0.51.0
+  questions:
+    - variable: volume_driver
+      description: "Volume driver"
+      label: "Volume driver"
+      required: true
+      type: "string"
+    - variable: wp_data
+      description: "WordPress data location"
+      label: "WordPress location"
+      required: true
+      default: "wp"
+      type: "string"
+    - variable: php_data
+      description: "PHP conf.d/ data location"
+      label: "PHP config location"
+      required: true
+      default: "php_confd"
+      type: "string"
+    - variable: db_name
+      description: "Database name"
+      label: "Database name"
+      required: true
+      default: "wordpress"
+      type: "string"
+    - variable: db_user
+      description: "Database user"
+      label: "Database user"
+      required: true
+      default: "wordpress"
+      type: "string"
+    - variable: db_password
+      description: "Database password"
+      label: "Database password"
+      required: true
+      type: "password"
+    - variable: db_service
+      description: "MariaDB, Galera Cluster or Percona XtraDB Cluster"
+      label: "Database service"
+      required: true
+      default: ""
+      type: "service"
+
+wordpress:
