@@ -1,21 +1,15 @@
-version: '2'
-volumes:
-  ${wp_data}:
-    driver: ${volume_driver}
-  ${php_data}:
-    driver: ${volume_driver}
-services:
-  wordpress:
-    image: wordpress
-    environment:
-      WORDPRESS_DB_HOST: db
-      WORDPRESS_DB_USER: ${db_user}
-      WORDPRESS_DB_PASSWORD: ${db_password}
-      WORDPRESS_DB_NAME: ${db_name}
-    external_links:
-    - ${db_service}:db
-    volumes:
-    - ${wp_data}:/var/www/html
-    - ${php_data}:/usr/local/etc/php/conf.d
-    labels:
-      io.rancher.container.pull_image: always
+wordpress:
+  image: wordpress
+  environment:
+    WORDPRESS_DB_HOST: db
+    WORDPRESS_DB_USER: ${db_user}
+    WORDPRESS_DB_PASSWORD: ${db_password}
+    WORDPRESS_DB_NAME: ${db_name}
+  external_links:
+  - ${db_service}:db
+  volumes:
+  - ${wp_data}:/var/www/html
+  - ${php_data}:/usr/local/etc/php/conf.d
+  volume_driver: ${volume_driver}
+  labels:
+    io.rancher.container.pull_image: always
