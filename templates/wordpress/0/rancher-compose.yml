@@ -6,7 +6,7 @@
   minimum_rancher_version: v0.51.0
   questions:
     - variable: volume_driver
-      description: "Volume driver"
+      description: "Volume driver (rancher-nfs, local, etc)"
       label: "Volume driver"
       required: true
       type: "string"
@@ -43,7 +43,6 @@
       description: "MariaDB, Galera Cluster or Percona XtraDB Cluster"
       label: "Database service"
       required: true
-      default: ""
       type: "service"
 
 wordpress:
