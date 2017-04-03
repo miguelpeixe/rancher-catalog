@@ -47,17 +47,14 @@
     - variable: cloudinary_cloud_name
       description: "Cloudinary cloud name"
       label: "Cloudinary cloud name"
-      required: true
       type: "string"
     - variable: cloudinary_api_key
       description: "Cloudinary API key"
       label: "Cloudinary API key"
-      required: true
       type: "string"
     - variable: cloudinary_api_secret
       description: "Cloudinary API secret"
       label: "Cloudinary API secret"
-      required: true
       type: "password"
 
 rastro-de-lama:
