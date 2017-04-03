@@ -1,0 +1,14 @@
+rastro-de-lama:
+  image: aparabolica/rastro-de-lama:latest
+  environment:
+    FB_DATABASE: ${fb_database}
+    FB_TOKEN: ${fb_token}
+    BOT_TOKEN: ${bot_token}
+    GROUP_ID: ${group_id}
+    FILE_STORE: ${file_store}
+    CLOUDINARY_CLOUD_NAME: ${cloudinary_cloud_name}
+    CLOUDINARY_API_KEY: ${cloudinary_api_key}
+    CLOUDINARY_API_SECRET: ${cloudinary_api_secret}
+  volumes:
+    - ${volume_name}:/home/node/app
+  volume_driver: ${volume_driver}

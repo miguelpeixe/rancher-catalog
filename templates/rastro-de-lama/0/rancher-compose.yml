@@ -1,0 +1,63 @@
+.catalog:
+  name: "Rastro de Lama"
+  version: "v0.0.1"
+  description: "Rastro de Lama"
+  uuid: Rastro-de-Lama-0
+  minimum_rancher_version: v0.51.0
+  questions:
+    - variable: volume_driver
+      description: "Volume driver (rancher-nfs, local, etc)"
+      label: "Volume driver"
+      required: true
+      type: "string"
+    - variable: volume_name
+      description: "Data location"
+      label: "Rastro de Lama app and data location"
+      required: true
+      default: "rastro-de-lama"
+      type: "string"
+    - variable: fb_database
+      description: "Firebase database API url"
+      label: "Firebase"
+      required: true
+      type: "string"
+    - variable: fb_token
+      description: "Firebase database access token"
+      label: "Firebase Token"
+      required: true
+      type: "password"
+    - variable: bot_token
+      description: "Telegram bot access token"
+      label: "Telegram bot token"
+      required: true
+      type: "password"
+    - variable: group_id
+      description: "Telegram group ID"
+      label: "Telegram group id"
+      required: true
+      type: "string"
+    - variable: file_store
+      description: "Select a file store options"
+      label: "File store"
+      required: true
+      type: "enum"
+      options:
+        - local
+        - cloudinary
+    - variable: cloudinary_cloud_name
+      description: "Cloudinary cloud name"
+      label: "Cloudinary cloud name"
+      required: true
+      type: "string"
+    - variable: cloudinary_api_key
+      description: "Cloudinary API key"
+      label: "Cloudinary API key"
+      required: true
+      type: "string"
+    - variable: cloudinary_api_secret
+      description: "Cloudinary API secret"
+      label: "Cloudinary API secret"
+      required: true
+      type: "password"
+
+rastro-de-lama:
