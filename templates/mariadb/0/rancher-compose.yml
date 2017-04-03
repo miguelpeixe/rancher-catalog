@@ -1,0 +1,27 @@
+.catalog:
+  name: "MariaDB + phpMyAdmin"
+  version: "v0.0.1"
+  description: "MariaDB + phpMyAdmin"
+  uuid: MariaDB-phpMyAdmin-0
+  minimum_rancher_version: v0.51.0
+  questions:
+    - variable: volume_driver
+      description: "Volume driver (rancher-nfs, local, etc)"
+      label: "Volume driver"
+      required: true
+      type: "string"
+    - variable: volume_name
+      description: "MariaDB data volume name"
+      label: "MariaDB data volume name"
+      required: true
+      default: "mariadb"
+      type: "string"
+    - variable: password
+      description: "MariaDB root password"
+      label: "MariaDB root password"
+      required: true
+      type: "password"
+
+mariadb:
+
+phpmyadmin:

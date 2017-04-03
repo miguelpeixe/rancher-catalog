@@ -1,0 +1,18 @@
+mariadb:
+  image: mariadb
+  environment:
+    MYSQL_ROOT_PASSWORD: ${password}
+  volumes:
+    - ${volume_name}:/var/lib/mysql
+  volume_driver: ${volume_driver}
+  labels:
+    io.rancher.container.pull_image: always
+phpmyadmin:
+  image: phpmyadmin/phpmyadmin
+  environment:
+    MYSQL_ROOT_PASSWORD: ${password}
+    PMA_HOST: db
+  links:
+    - mariadb:db
+  labels:
+    io.rancher.container.pull_image: always

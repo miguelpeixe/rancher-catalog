@@ -1,0 +1,5 @@
+name: MariaDB + phpMyAdmin
+description: |
+  MariaDB + phpMyAdmin
+version: v0.0.1
+category: Databases
