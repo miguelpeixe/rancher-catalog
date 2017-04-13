@@ -25,14 +25,14 @@
       label: "Database volume name"
       required: true
       type: "string"
+    - variable: auth_secret
+      description: "Application authentication secret key"
+      label: "Auth secret"
+      required: true
+      type: "password"
     - variable: server_volume
       description: "Nginx configuration files volume name"
       label: "Nginx config volume name"
-      required: true
-      type: "string"
-    - variable: app_config_volume
-      description: "Application configuration files volume name"
-      label: "App configuration volume name"
       required: true
       type: "string"
     - variable: data_volume

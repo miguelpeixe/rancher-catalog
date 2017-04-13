@@ -19,7 +19,24 @@ server:
 app:
   image: aparabolica/elke:latest
   environment:
-    NODE_ENV: production
+    NODE_CONFIG: |
+      {
+        "host": "${host}",
+        "port": 3030,
+        "postgres": "postgres://${db_user}:${db_password}@postgres:5432/${db_name}",
+        "public": "../public/",
+        "rtmp": {
+          "host": "${host}",
+          "port": 1935
+        },
+        "auth": {
+          "idField": "id",
+          "token": {
+            "secret": "${auth_secret}"
+          },
+          "local": {}
+        }
+      }
   volumes_from:
     - data
   volumes:
