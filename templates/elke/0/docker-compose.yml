@@ -1,0 +1,37 @@
+postgres:
+  image: postgres:9.6
+  environment:
+    POSTGRES_USER: ${db_user}
+    POSTGRES_PASSWORD: ${db_password}
+    POSTGRES_DB: ${db_name}
+  volumes:
+    - ${db_volume}:/var/lib/postgresql/data
+  volume_driver: ${volume_driver}
+server:
+  image: aparabolica/elke-nginx:latest
+  labels:
+    io.rancher.sidekicks: app,data
+  volumes_from:
+    - data
+  volumes:
+    - ${server_volume}:/config
+  volume_driver: ${volume_driver}
+app:
+  image: aparabolica/elke:latest
+  environment:
+    NODE_ENV: production
+  volumes_from:
+    - data
+  volumes:
+    - ${app_config_volume}:/home/node/elke/config
+  volume_driver: ${volume_driver}
+data:
+  image: busybox
+  labels:
+    io.rancher.container.start_once: 'true'
+  net: none
+  entrypoint: /bin/true
+  volumes:
+    - ${data_volume}:/data
+    - ${logs_volume}:/logs
+  volume_driver: ${volume_driver}

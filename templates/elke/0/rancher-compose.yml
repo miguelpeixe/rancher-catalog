@@ -1,0 +1,52 @@
+.catalog:
+  name: "elke"
+  version: "v0.0.1"
+  description: "Own your video network"
+  uuid: elke-0
+  minimum_rancher_version: v0.51.0
+  questions:
+    - variable: db_name
+      description: "Database name"
+      label: "Database name"
+      required: true
+      type: "string"
+    - variable: db_user
+      description: "Database user"
+      label: "Database user"
+      required: true
+      type: "string"
+    - variable: db_password
+      description: "Database password"
+      label: "Database password"
+      required: true
+      type: "password"
+    - variable: db_volume
+      description: "Database volume name"
+      label: "Database volume name"
+      required: true
+      type: "string"
+    - variable: server_volume
+      description: "Nginx configuration files volume name"
+      label: "Nginx config volume name"
+      required: true
+      type: "string"
+    - variable: app_config_volume
+      description: "Application configuration files volume name"
+      label: "App configuration volume name"
+      required: true
+      type: "string"
+    - variable: data_volume
+      description: "Application data volume name"
+      label: "App data volume name"
+      required: true
+      type: "string"
+    - variable: logs_volume
+      description: "Server logs data volume name"
+      label: "Server logs volume name"
+      required: true
+      type: "string"
+    - variable: volume_driver
+      description: "Volume driver (rancher-nfs, local, etc)"
+      label: "Volume driver"
+      required: true
+      type: "string"
